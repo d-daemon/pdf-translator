@@ -1,0 +1,77 @@
+[project]
+name = "pdf-translator"
+version = "0.1.0"
+description = "CLI PDF translator tool"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "beautifulsoup4==4.13.4",
+    "certifi==2025.4.26",
+    "charset-normalizer==3.4.2",
+    "colorama==0.4.6",
+    "deep-translator==1.11.4",
+    "idna==3.10",
+    "langdetect==1.0.9",
+    "pymupdf==1.25.5",
+    "requests==2.32.3",
+    "six==1.17.0",
+    "soupsieve==2.7",
+    "typing-extensions==4.13.2",
+    "urllib3==2.4.0",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.11.8",
+]
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+
+# Linting
+fix = true                 # Allow Ruff to auto-fix problems
+unsafe-fixes = false       # Do not apply unsafe fixes by default
+
+[tool.ruff.lint]
+select = [
+    "ALL",
+#    "E",   # pycodestyle errors
+#    "F",   # pyflakes
+#    "W",   # pycodestyle warnings
+#    "I",   # isort (import sorting)
+#    "N",   # pep8-naming (naming conventions)
+#    "UP",  # pyupgrade (Python 3 syntax modernization)
+#    "B",   # bugbear (common bugs)
+#    "C90", # mccabe (complexity)
+#    "S",   # bandit (security issues)
+#    "PL",  # pylint rules
+#    "PT",  # pytest style
+]
+ignore = [
+    "B008",   # Checks for function calls in default function arguments.
+    "C408",   # Checks for unnecessary dict(), list() or tuple() calls that can be rewritten as empty literals.
+    "E402",   # Checks for imports that are not at the top of the file.
+    "E501",   # Checks for lines that exceed the specified maximum character length.
+    "ERA001", # Checks for commented-out Python code.
+    "T201",   # Checks for print statements
+    "G004",   # Checks for uses of f-strings to format logging messages.
+    "SIM108", # Check for if-else-blocks that can be replaced with a ternary operator.
+    "SIM300", # Checks for conditions that position a constant on the left-hand side of the comparison operator, rather than the right-hand side.
+    "TRY003", # Checks for long exception messages that are not defined in the exception class itself.
+    "TRY301", #Checks for raise statements within try blocks. The only raises caught are those that throw exceptions caught by the try statement itself.
+]
+unfixable = [
+    "F401",  # unused-import
+]
+
+# Lint rules behavior
+exclude = [
+    ".venv", "venv", "build", "dist", ".eggs", ".mypy_cache", ".ruff_cache"
+]
+
+[tool.ruff.format]
+quote-style = "double"            # Use double quotes: "hello" (instead of single 'hello')
+indent-style = "space"            # Indent with spaces, not tabs
+skip-magic-trailing-comma = false # Like Black, respect magic trailing commas.
+line-ending = "auto"              # Keep OS default line endings (LF for Unix/macOS, CRLF for Windows)

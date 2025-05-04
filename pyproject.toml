@@ -51,15 +51,16 @@ select = [
 ignore = [
     "B008",   # Checks for function calls in default function arguments.
     "C408",   # Checks for unnecessary dict(), list() or tuple() calls that can be rewritten as empty literals.
+    "G004",   # Checks for uses of f-strings to format logging messages.
     "E402",   # Checks for imports that are not at the top of the file.
     "E501",   # Checks for lines that exceed the specified maximum character length.
     "ERA001", # Checks for commented-out Python code.
-    "T201",   # Checks for print statements
-    "G004",   # Checks for uses of f-strings to format logging messages.
     "SIM108", # Check for if-else-blocks that can be replaced with a ternary operator.
     "SIM300", # Checks for conditions that position a constant on the left-hand side of the comparison operator, rather than the right-hand side.
+    "T201",   # Checks for print statements
     "TRY003", # Checks for long exception messages that are not defined in the exception class itself.
-    "TRY301", #Checks for raise statements within try blocks. The only raises caught are those that throw exceptions caught by the try statement itself.
+    "TRY301", # Checks for raise statements within try blocks. The only raises caught are those that throw exceptions caught by the try statement itself.
+    "PTH",    # Checks for flake8 pathlib 
 ]
 unfixable = [
     "F401",  # unused-import

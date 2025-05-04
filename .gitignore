@@ -599,4 +599,7 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+# Local development
+/.local_dev
+
 # End of https://www.toptal.com/developers/gitignore/api/linux,macos,python,pycharm,windows,visualstudiocode,java,node,intellij+all
